@@ -1,5 +1,4 @@
 // Create an object that represents a cat. It should have properties for `tiredness`, `hunger`, `loneliness` and `happiness`
-
 class Cat {
     constructor() {
         this._tiredness = 0;
@@ -9,39 +8,63 @@ class Cat {
     }
 
 // Create methods that increase/decrease these properties
-    increaseTiredness(value) {
-        this._tiredness += value;
+    play(tirednessVal, lonelinessVal, hungerVal) {
+        this._tiredness += tirednessVal;
+        this._loneliness -= lonelinessVal;
+        this._hunger += hungerVal;
     };
-    decreaseTiredness(value){
-        this._tiredness -= value;
-    };
-    
-    increaseHunger(value) {
-        this._hunger += value;
-    };
-
-    decreaseHunger(value) {
-        this._hunger -= value;
-    };
-    
-    increaseLoneliness(value) {
-        this._loneliness += value;
+    sleep(tirednessVal, lonelinessVal){
+        this._tiredness -= tirednessVal;
+        this._loneliness += lonelinessVal;
     };
 
-    decreaseLoneliness(value) {
-        this._loneliness -= value;
+    eat(hungerVal, happinessVal) {
+        this._hunger -= hungerVal;
+        this._happiness += happinessVal;
     };
     
-    increaseHappiness(value) {
-        this._happiness += value;
+    getAngry(happinessVal) {
+        this._happiness -= happinessVal;
     };
-    decreaseHappiness(value) {
-        this._happiness -= value;
-    };
+
+    printStatus() {
+        const isTired = "The cat is tired";
+        const isNotTired = "The cat is not tired";
+        const isHungry = "The cat is hungry";
+        const isNotHungry = "The cat is not hungry";
+        const isLonely = "The cat is lonely";
+        const isNotLonely = "The cat is not lonely";
+        const isHappy = "The cat is happy";
+        const isNotHappy = "The cat is not happy";
+
+        if (this._tiredness > 10) {
+            console.log(isTired);
+        } else {
+            console.log(isNotTired);
+        }
+        if (this._hunger > 10) {
+            console.log(isHungry);
+        } else {
+            console.log(isNotHungry);
+        }
+        if (this._loneliness > 10) {
+            console.log(isLonely);
+        } else {
+            console.log(isNotLonely);
+        }
+        if (this._happiness > 10) {
+            console.log(isHappy);
+        } else {
+            console.log(isNotHappy);
+        }
+    }
 }
 
+const garfield = new Cat();
 
-
-
-
-const Garfield = new Cat();
+garfield.play(4);
+garfield.chill(6);
+garfield.getAngry(3);
+garfield.eat(9);
+garfield.play(10);
+garfield.printStatus();
