@@ -1,6 +1,6 @@
 # The Cat (Classes in JavaScript)
 
-This is the repository of the exercise **Cat** withing the study course at [WBS Coding School](https://www.wbscodingschool.com/).
+This is the repository of the exercise **Cat** within the study course at [WBS Coding School](https://www.wbscodingschool.com/).
 
 *Write yourself a virtual cat - animals with a CLI are so much nicer than ones with fur*.
 
